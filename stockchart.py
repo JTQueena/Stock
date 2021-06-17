@@ -3,8 +3,17 @@ import time
 import matplotlib.pyplot as plt
 
 stock2330 = twstock.Stock("2330")
+print(stock2330.price)
+print(stock2330.moving_average(stock2330.price, 5))
+print(stock2330.moving_average(stock2330.price, 10))
+print(len(stock2330.price))
+print(len(stock2330.moving_average(stock2330.price, 5)))
+print(len(stock2330.moving_average(stock2330.price, 10)))
 plt.title(stock2330.sid)
 plt.plot(stock2330.price)
+plt.plot(stock2330.moving_average(stock2330.price, 5))
+plt.plot(stock2330.moving_average(stock2330.price, 10))
+# 移動平均線顯示位置不對, 需再修正
 plt.show()
 #for key in [1326]:
 #    key = str(key)
@@ -32,4 +41,4 @@ plt.show()
     print(f"MA10: {fDay10avg:<6.2f} {buySellMA10:<5s}")
     print(f"MA30: {fDay30avg:<6.2f} {buySellMA30:<5s}")
 '''
-    time.sleep(10)
+#   time.sleep(10)
